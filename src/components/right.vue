@@ -2,11 +2,10 @@
   <!-- 整个右侧部分的组件 -->
   <div class="right">
     <self />
-    <!-- <img  src="../assets/img/right/self.jpg" > -->
   </div>
 </template>
 <script>
-import self from "../components/right-other/self.vue";
+import self from "../components/self/self.vue";
 export default {
   components: {
     self
@@ -16,7 +15,8 @@ export default {
 <style scoped lang="less">
 .right {
   float: right;
-  margin-right: 20px;
+  padding-top: 20px;
+  padding-right: 40px;
   width: 300px;
   // background-color: #f0f0f0;
 }
