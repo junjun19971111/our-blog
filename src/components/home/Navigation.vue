@@ -13,7 +13,7 @@
             <div v-show="isShare">
               <ul class="nav_second">
                 <i></i>
-                <li v-for="(item,index) in shares">
+                <li v-for="item in shares" :key="item">
                   <a href="">{{item}}</a>
                 </li>
               </ul>
@@ -26,7 +26,7 @@
             <div v-show="isNote">
               <ul class="nav_second">
                 <i></i>
-                <li v-for="(item,index) in shares">
+                <li v-for="item in shares" :key = 'item'>
                   <a href="">{{item}}</a>
                 </li>
               </ul>
@@ -66,10 +66,10 @@
       closeShare() {
         this.isShare = false
       },
-      showNote(){
+      showNote() {
         this.isNote = true;
       },
-      closeNote(){
+      closeNote() {
         this.isNote = false;
       }
     },
@@ -84,7 +84,7 @@
 <style scoped lang="less">
   .header {
     width: 100%;
-    height: 75px;
+    height: 4.5em;
     background: #f8f8fa;
     box-shadow: 0 1px 3px #ddd;
     /* border: 1px #fff solid; */
@@ -97,20 +97,21 @@
     padding: 0;
 
   }
-  .header a:hover{
+
+  .header a:hover {
     color: #3a76bf;
   }
 
   .header .name {
-    line-height: 50px;
+    line-height: 2.5em;
     font-weight: normal;
     color: #3a76bf;
     display: inline-block;
-    font-size: 25px;
+    font-size: 1.4em;
   }
 
   .header .instruction {
-    line-height: 20px;
+    line-height: 1.2em;
     font-weight: normal;
     color: #3a76bf;
   }
@@ -120,23 +121,23 @@
     float: left;
     height: 100%;
     text-align: center;
-    line-height: 75px;
+    line-height: 4.5em;
   }
 
   .header .header_bars {
     width: 50%;
     float: left;
     height: 100%;
-    line-height: 73px;
+    line-height: 4.5em;
   }
 
   .header .header_bars .have_second:before {
     position: absolute;
     content: "";
-    top: 34px;
-    right: 10px;
-    width: 4px;
-    height: 4px;
+    top: 2.2em;
+    right: 0.5em;
+    width: 0.25em;
+    height: 0.25em;
     border: 1px solid #999;
     border-right-width: 0;
     border-top-width: 0;
@@ -164,12 +165,13 @@
   .header .header_bars>ul>li>a {
     height: 100%;
     display: block;
-    padding: 0 20px;
+    padding: 0 1.2em;
     cursor: pointer;
     text-decoration: none;
     color: #333;
   }
-  .header .header_bars>ul>li :hover{
+
+  .header .header_bars>ul>li :hover {
     color: #3a76bf;
   }
 
@@ -178,7 +180,7 @@
     float: left;
     height: 100%;
     position: relative;
-    line-height: 75px;
+    line-height: 4.5em;
   }
 
   .jd_header {
@@ -189,37 +191,38 @@
   }
 
   .jd_header .header_search {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding-left: 10px;
+    padding-left: 0.75em;
     width: 100%;
-    height: 37px;
-    margin-top: 4px;
-    border-radius: 17px;
+    height: 2.5em;
+    margin-top: 0.25em;
+    border-radius: 1em;
     background: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
+    font-size: 0.8em;
     color: #999;
     border: none;
   }
 
   .jd_header .header_glass {
+    background: url('../../assets/img/Navigation/search.png') no-repeat;
     cursor: pointer;
     display: inline-block;
     position: absolute;
-    right: 16px;
-    top: 28px;
-    width: 20px;
-    height: 20px;
-    background: url('../../assets/img/Navigation/search.png') no-repeat;
-    background-size: 20px 20px;
+    right: 0.7em;
+    top: 1.7em;
+    width: 1.2em;
+    height: 1.2em;
+    background-size: 1.2em 1.2em;
   }
 
   .nav_second {
     width: 80%;
     padding: 0;
-    line-height: 40px;
-    font-size: 14px;
+    line-height: 2.4em;
+    font-size: 0.85em;
     background: white;
-    margin-left: 15px;
+    margin-left: 1em;
     position: relative;
   }
 
@@ -234,11 +237,11 @@
 
   .nav_second i {
     position: absolute;
-    top: -18px;
+    top: -1.1em;
     left: 50%;
-    margin-left: -10px;
+    margin-left: -0.6em;
     z-index: 10;
-    border-width: 10px;
+    border-width: 0.6em;
     border-style: solid;
     border-top-color: transparent;
     border-bottom-color: #FFF;
