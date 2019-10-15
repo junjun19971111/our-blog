@@ -18,6 +18,6 @@ export default {
   float: right;
   margin-right: 20px;
   width: 300px;
-  // background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 </style>
