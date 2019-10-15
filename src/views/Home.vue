@@ -1,17 +1,19 @@
 <template>
   <div class="home">
     <Navigation />
+    <right />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navigation from '@/components/Navigation.vue'
-
+import right from '@/components/right.vue'
 export default {
   name: 'home',
   components: {
-    Navigation
+    Navigation,
+    right
   }
 }
 </script>
