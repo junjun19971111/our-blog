@@ -13,7 +13,7 @@
             <div v-show="isShare">
               <ul class="nav_second">
                 <i></i>
-                <li v-for="(item,index) in shares">
+                <li v-for="(item,index) in shares" :key=index>
                   <a href="">{{item}}</a>
                 </li>
               </ul>
@@ -26,7 +26,7 @@
             <div v-show="isNote">
               <ul class="nav_second">
                 <i></i>
-                <li v-for="(item,index) in shares">
+                <li v-for="(item,index) in shares" :key=index>
                   <a href="">{{item}}</a>
                 </li>
               </ul>
@@ -43,10 +43,11 @@
         <i class="header_glass"></i>
       </div>
     </div>
-  </div>
+  </div>  
 </template>
 
 <script>
+  // import Recommend from './home/Recommend.vue'
   export default {
     name: 'Navigation',
     data() {
@@ -59,6 +60,9 @@
         tag: [0, 1]
       }
     },
+    // components:{
+    //   Recommend
+    // },
     methods: {
       showShare() {
         this.isShare = true;
