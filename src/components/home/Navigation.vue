@@ -7,16 +7,32 @@
     <div class="header_bars">
       <ul>
         <li><a href="">这是导航栏</a></li>
-        <li class="have_second">
+        <li class="have_second" @mouseenter='showShare' @mouseleave='closeShare'>
           <a href="">这是导航栏</a>
-          <ul class="nav_second">
-            <i></i>
-            <li><a href="">模板分享</a></li>
-            <li><a href="">模板分享</a></li>
-            <li><a href="">模板分享</a></li>
-          </ul>
+          <transition name="fade">
+            <div v-show="isShare">
+              <ul class="nav_second">
+                <i></i>
+                <li v-for="(item,index) in shares">
+                  <a href="">{{item}}</a>
+                </li>
+              </ul>
+            </div>
+          </transition>
         </li>
-        <li class="have_second"><a href="">学习笔记分享</a></li>
+        <li class="have_second" @mouseenter='showNote' @mouseleave='closeNote'>
+          <a href="">学习笔记分享</a>
+          <transition name="fade">
+            <div v-show="isNote">
+              <ul class="nav_second">
+                <i></i>
+                <li v-for="(item,index) in shares">
+                  <a href="">{{item}}</a>
+                </li>
+              </ul>
+            </div>
+          </transition>
+        </li>
         <li><a href="">我的文章</a></li>
         <li><a href="">关于我</a></li>
       </ul>
@@ -36,7 +52,25 @@
     data() {
       return {
         name: 'Caden',
-        instructions: '天生我才必有用'
+        instructions: '天生我才必有用',
+        isShare: false,
+        isNote: false,
+        shares: ['实例分享', '书籍分享', '心得分享'],
+        tag: [0, 1]
+      }
+    },
+    methods: {
+      showShare() {
+        this.isShare = true;
+      },
+      closeShare() {
+        this.isShare = false
+      },
+      showNote(){
+        this.isNote = true;
+      },
+      closeNote(){
+        this.isNote = false;
       }
     },
     computed: {
@@ -62,6 +96,9 @@
     margin: 0;
     padding: 0;
 
+  }
+  .header a:hover{
+    color: #3a76bf;
   }
 
   .header .name {
@@ -132,6 +169,9 @@
     text-decoration: none;
     color: #333;
   }
+  .header .header_bars>ul>li :hover{
+    color: #3a76bf;
+  }
 
   .header .header_right {
     width: 20%;
@@ -173,9 +213,45 @@
     background-size: 20px 20px;
   }
 
+  .nav_second {
+    width: 80%;
+    padding: 0;
+    line-height: 40px;
+    font-size: 14px;
+    background: white;
+    margin-left: 15px;
+    position: relative;
+  }
+
+  .fade-enter-active .fade-leave-active {
+    transition: all 1.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .nav_second i {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 10;
+    border-width: 10px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: #FFF;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+
   .nav_second li {
+    display: block;
     list-style: none;
     margin: 0;
+    border-bottom: 1px solid #f2f2f2;
+    ;
   }
 
   .nav_second li a {
