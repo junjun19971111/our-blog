@@ -7,8 +7,16 @@
     <div class="header_bars">
       <ul>
         <li><a href="">这是导航栏</a></li>
-        <li><a href="">这是导航栏</a></li>
-        <li><a href="">学习笔记分享</a></li>
+        <li class="have_second">
+          <a href="">这是导航栏</a>
+          <ul class="nav_second">
+            <i></i>
+            <li><a href="">模板分享</a></li>
+            <li><a href="">模板分享</a></li>
+            <li><a href="">模板分享</a></li>
+          </ul>
+        </li>
+        <li class="have_second"><a href="">学习笔记分享</a></li>
         <li><a href="">我的文章</a></li>
         <li><a href="">关于我</a></li>
       </ul>
@@ -45,7 +53,7 @@
     height: 75px;
     background: #f8f8fa;
     box-shadow: 0 1px 3px #ddd;
-    border: 1px #fff solid;
+    /* border: 1px #fff solid; */
     -webkit-box-shadow: 0 1px 3px #ddd;
     border-left: none;
     border-right: none;
@@ -85,6 +93,25 @@
     line-height: 73px;
   }
 
+  .header .header_bars .have_second:before {
+    position: absolute;
+    content: "";
+    top: 34px;
+    right: 10px;
+    width: 4px;
+    height: 4px;
+    border: 1px solid #999;
+    border-right-width: 0;
+    border-top-width: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  *::before {
+    -webkit-transition: ease-in-out .5s;
+    transition: ease-in-out .5s;
+  }
+
   .header .header_bars>ul {
     display: block;
     list-style: none;
@@ -117,11 +144,6 @@
   .jd_header {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    position: fixed;
-    /* height: 45px; */
-    width: 21%;
-    /* padding-left: 20px; */
-    /* padding-right: 20px; */
     overflow: hidden;
     z-index: 50;
   }
@@ -140,13 +162,27 @@
   }
 
   .jd_header .header_glass {
+    cursor: pointer;
     display: inline-block;
     position: absolute;
     right: 16px;
     top: 28px;
     width: 20px;
     height: 20px;
-    background: url(/img/search.3ff22bc1.png) no-repeat;
+    background: url('../../assets/img/Navigation/search.png') no-repeat;
     background-size: 20px 20px;
+  }
+
+  .nav_second li {
+    list-style: none;
+    margin: 0;
+  }
+
+  .nav_second li a {
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
   }
 </style>

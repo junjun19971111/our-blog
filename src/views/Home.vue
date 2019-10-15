@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import Navigation from '@/components/Navigation.vue'
+import Navigation from '@/components/home/Navigation.vue'
 
 export default {
   name: 'home',
