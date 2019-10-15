@@ -95,6 +95,7 @@
     z-index: 999;
     margin: 0;
     padding: 0;
+    border: 1px #fff solid;
 
   }
 
