@@ -7,9 +7,9 @@
   </div>
 </template>
 <script>
-import self from "../components/self/self.vue";
-import wxMark from "../components/wxMark/wxMark.vue";
-import qqMark from "../components/qqMark/qqMark.vue"
+import self from "../right/self/self.vue";
+import wxMark from "../right/wxMark/wxMark.vue";
+import qqMark from "../right/qqMark/qqMark.vue"
 export default {
   components: {
     self,
