@@ -5,7 +5,7 @@
       <NavImg />
     </div>
     <right />
-      <Recommend />
+      <!-- <Recommend /> -->
   </div>
 
 </template>

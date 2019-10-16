@@ -7,6 +7,7 @@
               {{item.description}}
           </span>
       </div>
+      <a href="" class="linkcss">more</a>
   </div>
 </template>
 
@@ -49,6 +50,7 @@ export default {
       padding: 10px,20px,20px,20px;
       color: #3a76bf;
       font-size: 12px;
+      text-align: center;
       .hehe{
           color: #ff6600
       }
@@ -65,6 +67,11 @@ export default {
           color: #990033
       }
   }
-  
+  .linkcss {
+      display: inline-block;
+      padding-top: 10px;
+      font-size: 10px;
+      text-decoration: none;
+  }
 }
 </style>
