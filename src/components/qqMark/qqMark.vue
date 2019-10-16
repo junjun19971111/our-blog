@@ -10,7 +10,7 @@
 <script>
 export default {};
 </script>
-<style lang="less">
+<style scoped lang="less">
 .mark-wrapper {
   overflow: hidden;
   margin-bottom: 24px;
