@@ -15,8 +15,6 @@ export default {
 <style scoped lang="less">
 .right {
   float: right;
-  padding-top: 20px;
-  padding-right: 40px;
   width: 300px;
   background-color: #f0f0f0;
 }

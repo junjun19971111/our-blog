@@ -4,8 +4,7 @@
     <div class="showImg">
       <NavImg />
     </div>
-    <right />
-      <Recommend />
+    <Content />
   </div>
 
 </template>
@@ -14,15 +13,13 @@
 // @ is an alias to /src
 import Navigation from '@/components/home/Navigation.vue'
 import NavImg from '@/components/home/NavImg.vue'
-import right from '@/components/right.vue'
-import Recommend from '@/components/home/Recommend.vue'
+import Content from '@/components/home/Content.vue'
 export default {
   name: 'home',
   components: {
     Navigation,
-    right,
     NavImg,
-    Recommend
+    Content
   }
 }
 </script>

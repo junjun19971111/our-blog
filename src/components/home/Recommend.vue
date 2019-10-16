@@ -64,12 +64,9 @@ a {
   float: right;
   float: right;
   padding-top: 20px;
-  padding-right: 40px;
   width: 300px;
   background-color: #f0f0f0;
-  position: relative;
-  top: 300px;
-  left: 340px;
+  
 }
 
 .right_box {
@@ -108,7 +105,6 @@ div ul li {
 }
 .recommend_container div ul li:before {
   position: absolute;
-  // text-indent: .4em;
   top: 0;
   left: 0;
   background: #414d55;
