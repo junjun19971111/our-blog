@@ -66,7 +66,6 @@ a {
   padding-top: 20px;
   width: 300px;
   background-color: #f0f0f0;
-  
 }
 
 .right_box {
