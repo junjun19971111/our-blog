@@ -13,7 +13,7 @@
 
 <script>
   import Recommend from './Recommend.vue';
-  import right from '../right.vue';
+  import right from '../right/right.vue';
   import Article from './Article.vue'
   export default {
     name:'Content',

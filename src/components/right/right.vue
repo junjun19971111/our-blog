@@ -2,13 +2,19 @@
   <!-- 整个右侧部分的组件 -->
   <div class="right">
     <self />
+    <wxMark />
+    <qqMark />
   </div>
 </template>
 <script>
-import self from "../components/self/self.vue";
+import self from "../right/self/self.vue";
+import wxMark from "../right/wxMark/wxMark.vue";
+import qqMark from "../right/qqMark/qqMark.vue"
 export default {
   components: {
-    self
+    self,
+    wxMark,
+    qqMark
   }
 };
 </script>
