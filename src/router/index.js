@@ -9,35 +9,52 @@ const Search = () => import('../views/search/Search.vue')
 const Writen = () => import('../views/writen/Writen.vue')
 
 Vue.use(Router)
-const routes = [
-  {
-    path:'/',
-    redirect: 'descovery'
+const routes = [{
+    path: '/',
+    redirect: 'discovery'
   },
   {
-    path: '/descovery',
-    name: 'descovery',
-    component: Discovery
-  },{
+    path: '/discovery',
+    name: 'discovery',
+    component: Discovery,
+    meta: {
+      title: '小笺-发现'
+    }
+  }, {
     path: '/message',
     name: 'message',
-    component: Message
-  },{
+    component: Message,
+    meta: {
+      title: '小笺-消息'
+    }
+  }, {
     path: '/attention',
     name: 'attention',
-    component: Attention
-  },{
+    component: Attention,
+    meta: {
+      title: '小笺-关注'
+    }
+  }, {
     path: '/profile',
     name: 'profile',
-    component: Profile
-  },{
+    component: Profile,
+    meta: {
+      title: '小笺-个人中心'
+    }
+  }, {
     path: '/search',
     name: 'search',
-    component: Search
-  },{
+    component: Search,
+    meta: {
+      title: '小笺-搜索'
+    }
+  }, {
     path: '/writen',
     name: 'writen',
-    component: Writen
+    component: Writen,
+    meta: {
+      title: '小笺-写作'
+    }
   },
 ]
 export default new Router({

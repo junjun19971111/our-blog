@@ -5,8 +5,8 @@
     </div>
     <div class="mdeu">
       <ul class="tab_list">
-        <li class="tab_list active">
-          <router-link tag="a" to="/">发现</router-link>
+        <li>
+          <router-link tag="a" to="/discovery">发现</router-link>
         </li>
         <li>
           <router-link tag="a" to="/attention">关注</router-link>
@@ -93,11 +93,6 @@
     text-decoration: none;
     color: black;
   }
-
-  .header .mdeu .tab_list .active a {
-    color: #ea6f5a;
-  }
-
   .header .search {
     margin-left: 20px;
   }
@@ -151,5 +146,8 @@
     background-color: #ea6f5a;
     line-height: 40px;
     text-align: center;
+  }
+  .header .tab_list .router-link-active{
+    color: #ea6f5a!important;
   }
 </style>
