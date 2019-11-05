@@ -1,21 +1,31 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div class="nav">
+      <Navigation />
+    </div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
+
+
   </div>
 </template>
-
+<script>
+  import Navigation from './components/home/Navigation.vue'
+  export default {
+    name: 'App',
+    components: {
+      Navigation
+    }
+  }
+</script>
 <style lang="less">
-  body{
+  body {
     background: #f2f2f2;
   }
-#app {
-  width: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background: #f2f2f2;
-}
+  .nav{
+    width: 100%;
+    height: 56px;
+  }
 
 </style>

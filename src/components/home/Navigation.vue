@@ -1,270 +1,155 @@
 <template>
   <div class="header">
-    <div class="header_left">
-      <span class="name">{{titleName}}</span>
-      <span class="instruction">{{instructions}}</span>
+    <div class="logo">
+      博客
     </div>
-    <div class="header_bars">
-      <ul>
-        <li><a href="">这是导航栏</a></li>
-        <li class="have_second" @mouseenter='showShare' @mouseleave='closeShare'>
-          <a href="">这是导航栏</a>
-          <transition name="fade">
-            <div v-show="isShare">
-              <ul class="nav_second">
-                <i></i>
-                <li v-for="item in shares" :key="item">
-                  <a href="">{{item}}</a>
-                </li>
-              </ul>
-            </div>
-          </transition>
+    <div class="mdeu">
+      <ul class="tab_list">
+        <li class="tab_list active">
+          <router-link tag="a" to="/">发现</router-link>
         </li>
-        <li class="have_second" @mouseenter='showNote' @mouseleave='closeNote'>
-          <a href="">学习笔记分享</a>
-          <transition name="fade">
-            <div v-show="isNote">
-              <ul class="nav_second">
-                <i></i>
-                <li v-for="item in shares" :key = 'item'>
-                  <a href="">{{item}}</a>
-                </li>
-              </ul>
-            </div>
-          </transition>
+        <li>
+          <router-link tag="a" to="/attention">关注</router-link>
         </li>
-        <li><a href="">我的文章</a></li>
-        <li><a href="">关于我</a></li>
+        <li>
+          <router-link tag="a" to="/message">消息</router-link>
+        </li>
       </ul>
     </div>
-    <div class="header_right">
-      <div class="jd_header">
-        <input type="search" class="header_search" id="searchInput" placeholder="输入关键字搜索">
-        <i class="header_glass"></i>
-      </div>
+    <div class="search">
+      <input type="text" placeholder="搜索" class="search-input">
+      <router-link tag="a" to="/search">
+        <img src="../../assets/img/Navigation/search.png" alt="">
+      </router-link>
     </div>
-  </div>  
+    <div class="user">
+      <router-link tag="a" to="/profile">
+        <img src="../../assets/img/user.jpg" alt="">
+      </router-link>
+    </div>
+    <router-link tag="a" to="/writen">
+      <div class="writen">
+        写文章
+      </div>
+    </router-link>
+
+  </div>
 </template>
 
 <script>
   // import Recommend from './home/Recommend.vue'
   export default {
     name: 'Navigation',
-    data() {
-      return {
-        name: 'Caden',
-        instructions: '天生我才必有用',
-        isShare: false,
-        isNote: false,
-        shares: ['实例分享', '书籍分享', '心得分享'],
-        tag: [0, 1]
-      }
-    },
-    // components:{
-    //   Recommend
-    // },
-    methods: {
-      showShare() {
-        this.isShare = true;
-      },
-      closeShare() {
-        this.isShare = false
-      },
-      showNote() {
-        this.isNote = true;
-      },
-      closeNote() {
-        this.isNote = false;
-      }
-    },
-    computed: {
-      titleName() {
-        return this.name + 'の博客|';
-      }
-    }
+
   }
 </script>
 
 <style scoped lang="less">
+  ul,
+  li {
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+
   .header {
     width: 100%;
-    height: 75px;
-    background: #f8f8fa;
+    height: 56px;
+    background: #ffffff;
     box-shadow: 0 1px 3px #ddd;
     /* border: 1px #fff solid; */
     -webkit-box-shadow: 0 1px 3px #ddd;
     border-left: none;
     border-right: none;
-    position: relative;
+    position: fixed;
     z-index: 999;
     margin: 0;
     padding: 0;
     border: 1px #fff solid;
-
+    display: flex;
   }
 
-  .header a:hover {
-    color: #3a76bf;
-  }
-
-  .header .name {
-    line-height: 75px;
-    color: #3a76bf;
-    display: inline-block;
-    font-size: 25px;
-  }
-
-  .header .instruction {
-    line-height: 75px;
-    font-weight: normal;
-    color: #3a76bf;
-  }
-
-  .header .header_left {
-    width: 28%;
-    float: left;
-    height: 100%;
+  .header .logo {
+    line-height: 56px;
+    width: 90px;
+    font-size: 24px;
+    color: #ea6f5a;
     text-align: center;
-    line-height: 75px;
   }
 
-  .header .header_bars {
-    width: 50%;
+  .header .mdeu {
+    margin-left: 20px;
+  }
+
+  .header .mdeu .tab_list li {
+    margin-left: 10px;
     float: left;
-    height: 100%;
-    line-height: 75px;
+    font-size: 17px;
   }
 
-  .header .header_bars .have_second:before {
-    position: absolute;
-    content: "";
-    top: 34px;
-    right: 10px;
-    width: 4px;
-    height: 4px;
-    border: 1px solid #999;
-    border-right-width: 0;
-    border-top-width: 0;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
-
-  *::before {
-    -webkit-transition: ease-in-out .5s;
-    transition: ease-in-out .5s;
-  }
-
-  .header .header_bars>ul {
-    display: block;
-    list-style: none;
-    margin: 0;
-  }
-
-  .header .header_bars>ul>li {
-    display: inline;
-    position: relative;
-    float: left;
-  }
-
-  .header .header_bars>ul>li>a {
-    height: 100%;
-    display: block;
-    padding: 0 20px;
-    cursor: pointer;
+  .header .mdeu .tab_list li a {
+    padding: 15px;
     text-decoration: none;
-    color: #333;
+    color: black;
   }
 
-  .header .header_bars>ul>li :hover {
-    color: #3a76bf;
+  .header .mdeu .tab_list .active a {
+    color: #ea6f5a;
   }
 
-  .header .header_right {
-    width: 20%;
-    float: left;
-    height: 100%;
-    position: relative;
-    line-height: 75px;
+  .header .search {
+    margin-left: 20px;
   }
 
-  .jd_header {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 50;
+  .header .search input {
+    padding: 0 40px 0 20px;
+    width: 160px;
+    height: 38px;
+    font-size: 14px;
+    border: 1px solid #eee;
+    border-radius: 40px;
+    background: #eee;
+    margin-top: 9px;
   }
 
-  .jd_header .header_search {
-    box-sizing: border-box;
-    padding-left: 10px;
-    width: 100%;
-    height: 30px;
-    margin-top: 20px;
+  .header .search input:focus {
+    outline: none
+  }
+
+  .header .search a {
+    position: absolute;
+    top: 15px;
+    margin-left: -36px;
+  }
+
+  .header .search img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header .user {
+    margin-left: 480px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+
+  .header .user img {
+    width: 40px;
+    height: 40px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 12px;
-    color: #999;
-    border: none;
   }
 
-  .jd_header .header_glass {
-    background: url('../../assets/img/Navigation/search.png') no-repeat;
-    cursor: pointer;
-    display: inline-block;
-    position: absolute;
-    right: 10px;
-    top: 28px;
-    width: 20px;
-    height: 20px;
-    background-size: 20px 20px;
-  }
-
-  .nav_second {
-    width: 80%;
-    padding: 0;
-    line-height: 30px;
-    font-size: 13px;
-    background: white;
-    margin-left: 15px;
-    position: relative;
-  }
-
-  .fade-enter-active .fade-leave-active {
-    transition: all 1.5s;
-  }
-
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
-
-  .nav_second i {
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    margin-left: -10px;
-    z-index: 10;
-    border-width: 10px;
-    border-style: solid;
-    border-top-color: transparent;
-    border-bottom-color: #FFF;
-    border-right-color: transparent;
-    border-left-color: transparent;
-  }
-
-  .nav_second li {
-    display: block;
-    list-style: none;
-    margin: 0;
-    border-bottom: 1px solid #f2f2f2;
-    ;
-  }
-
-  .nav_second li a {
-    height: 100%;
-    display: block;
-    cursor: pointer;
-    text-decoration: none;
-    color: #333;
+  .header .writen {
+    width: 100px;
+    height: 40px;
+    line-height: 24px;
+    margin: 8px 12px 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #ea6f5a;
+    line-height: 40px;
+    text-align: center;
   }
 </style>
