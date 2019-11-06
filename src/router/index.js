@@ -12,11 +12,11 @@ Vue.use(Router)
 const routes = [
   {
     path:'/',
-    redirect: 'descovery'
+    redirect: 'discovery'
   },
   {
-    path: '/descovery',
-    name: 'descovery',
+    path: '/discovery',
+    name: 'di scovery',
     component: Discovery
   },{
     path: '/message',
